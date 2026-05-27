@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Propuesta Comercial — Vortta para SUGOI Store</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: "Segoe UI", system-ui, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.55; font-size: 13px; }
+  body { max-width: 800px; margin: 0 auto; padding: 30px 40px; }
+
+  .cover { padding: 40px 30px; background: linear-gradient(135deg, #1456ff 0%, #0a2db5 100%); color: #fff; border-radius: 12px; margin-bottom: 30px; position: relative; overflow: hidden; }
+  .cover::after { content: "⚡"; position: absolute; right: -10px; bottom: -30px; font-size: 220px; opacity: 0.08; }
+  .cover .brand { font-size: 11px; letter-spacing: 0.35em; opacity: 0.75; margin-bottom: 12px; }
+  .cover h1 { font-size: 32px; font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
+  .cover .meta { font-size: 13px; opacity: 0.9; }
+  .cover .meta strong { color: #ffe600; }
+
+  h2 { font-size: 18px; color: #0a2db5; border-bottom: 2px solid #1456ff; padding-bottom: 6px; margin: 28px 0 14px; }
+  h3 { font-size: 14px; color: #1a1a1a; margin: 14px 0 6px; font-weight: 700; }
+  p  { margin-bottom: 10px; text-align: justify; }
+  ul { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 4px; }
+
+  .card { background: #f7f8fa; border-left: 4px solid #1456ff; padding: 14px 18px; border-radius: 6px; margin: 12px 0; }
+  .card--yellow { background: #fffbe6; border-left-color: #d4af00; }
+
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .feature { background: #f7f8fa; border-radius: 8px; padding: 14px; border: 1px solid #e2e4e8; }
+  .feature__title { font-weight: 700; color: #0a2db5; margin-bottom: 4px; font-size: 13px; }
+  .feature__desc  { font-size: 12px; color: #555; }
+
+  .timeline { margin: 14px 0; }
+  .timeline__row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px dashed #ddd; }
+  .timeline__row:last-child { border-bottom: 0; }
+  .timeline__phase { font-weight: 700; color: #1456ff; width: 110px; flex-shrink: 0; font-size: 12px; }
+  .timeline__desc { font-size: 12px; }
+
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 16px; }
+  .tag { background: #eef1ff; color: #0a2db5; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+
+  .signoff { margin-top: 36px; padding-top: 20px; border-top: 2px solid #1456ff; display: flex; justify-content: space-between; align-items: flex-end; }
+  .signoff .left { font-size: 11px; color: #777; }
+  .signoff .right { text-align: right; font-size: 12px; }
+  .signoff .right strong { color: #0a2db5; font-size: 14px; }
+
+  .print-btn { position: fixed; top: 14px; right: 14px; background: #1456ff; color: #fff; border: 0; padding: 10px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  @media print { .print-btn { display: none; } body { padding: 0; } .cover { box-shadow: none; } }
+
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⬇ Imprimir / Guardar PDF</button>
+
+<div class="cover">
+  <div class="brand">VORTTA · DESARROLLO WEB</div>
+  <h1>Propuesta Comercial<br/>SUGOI Store — Plataforma Web Interactiva</h1>
+  <div class="meta">
+    Preparado para: <strong>SUGOI Store</strong> · Cuenca, Ecuador<br/>
+    Emitido: <strong>Mayo 2026</strong> · Vigencia: 30 días<br/>
+    Contacto Vortta: <strong>contacto@vortta.com</strong>
+  </div>
+</div>
+
+<h2>1. Resumen Ejecutivo</h2>
+<p>
+Sugoi Store es una marca cuencana de prendas y accesorios personalizados (camisetas, hoodies, estuches). En Vortta diseñamos y desarrollamos una <strong>plataforma web a medida</strong> que no solo presenta la marca, sino que permite a cada cliente <strong>diseñar su prenda en vivo</strong> antes de comprar — generando una cotización automática y enviándola directamente al WhatsApp del negocio.
+</p>
+<p>
+El resultado es una experiencia diferenciada en el mercado local: el cliente no necesita imaginar cómo quedará su diseño, lo ve sobre el producto antes de pagar, y Sugoi recibe pedidos cualificados con todas las especificaciones ya definidas.
+</p>
+
+<div class="card card--yellow">
+  <strong>⚡ Diferencial clave:</strong> ninguna competencia local en Cuenca ofrece un editor de diseño en vivo con cotización automática. Es una ventaja competitiva inmediata, especialmente con público joven que valora la autonomía y el "yo lo armé".
+</div>
+
+<h2>2. Alcance del Proyecto</h2>
+
+<div class="feature-grid">
+  <div class="feature">
+    <div class="feature__title">Landing institucional</div>
+    <div class="feature__desc">Hero animado, secciones de categorías, catálogo filtrable, Acerca de, y contacto con redes sociales y WhatsApp directo.</div>
+  </div>
+  <div class="feature">
+    <div class="feature__title">Identidad visual</div>
+    <div class="feature__desc">Diseño en estilo cómic-streetwear cuencano, paleta azul/amarillo/negro tomada del logo, tipografías propias de marca.</div>
+  </div>
+  <div class="feature">
+    <div class="feature__title">Editor interactivo</div>
+    <div class="feature__desc">Drag & drop de diseños del cliente, ajuste de tamaño/rotación/opacidad, soporte para frente y espalda, 18 colores de prenda.</div>
+  </div>
+  <div class="feature">
+    <div class="feature__title">Mockups fotorealistas</div>
+    <div class="feature__desc">Renderizado del diseño sobre prendas reales con sombras y arrugas. Compatibilidad con camiseta, hoodie y estuche.</div>
+  </div>
+  <div class="feature">
+    <div class="feature__title">Cotización automática</div>
+    <div class="feature__desc">Cálculo en vivo según producto, talla, complejidad del diseño y cantidad. Envío directo al WhatsApp del negocio.</div>
+  </div>
+  <div class="feature">
+    <div class="feature__title">Responsive</div>
+    <div class="feature__desc">Adaptado a celular, tablet y desktop. Optimizado para velocidad de carga y SEO básico (meta tags, favicon, descripción).</div>
+  </div>
+</div>
+
+<h3>Stack técnico</h3>
+<div class="stack">
+  <span class="tag">HTML5</span>
+  <span class="tag">CSS3</span>
+  <span class="tag">JavaScript (Vanilla)</span>
+  <span class="tag">Canvas API</span>
+  <span class="tag">SVG</span>
+  <span class="tag">WhatsApp API</span>
+  <span class="tag">Mockups PSD → PNG</span>
+</div>
+
+<h2>3. Cronograma</h2>
+<div class="timeline">
+  <div class="timeline__row"><div class="timeline__phase">Semana 1</div><div class="timeline__desc">Revisión de identidad, validación de mockups con el cliente, ajustes finales de diseño visual.</div></div>
+  <div class="timeline__row"><div class="timeline__phase">Semana 2</div><div class="timeline__desc">Configuración de hosting + dominio, deploy del sitio, pruebas en navegadores y dispositivos.</div></div>
+  <div class="timeline__row"><div class="timeline__phase">Semana 3</div><div class="timeline__desc">Capacitación al equipo Sugoi, conexión con WhatsApp Business y redes, entrega oficial.</div></div>
+  <div class="timeline__row"><div class="timeline__phase">Semana 4+</div><div class="timeline__desc">Soporte post-lanzamiento (incluido los primeros 30 días sin costo adicional).</div></div>
+</div>
+
+<div class="page-break"></div>
+
+<h2>4. Lo que SUGOI recibe</h2>
+<ul>
+  <li>Sitio web completo desplegado en su propio dominio</li>
+  <li>Editor de diseño funcional con 18 colores y 3 productos</li>
+  <li>Mockups de las 3 líneas (camisetas, hoodies, estuches) listos para usar</li>
+  <li>Integración con WhatsApp para recibir cotizaciones</li>
+  <li>Manual de uso del editor y del back-office (Word/PDF)</li>
+  <li>Capacitación virtual de 1 hora al equipo</li>
+  <li>Código fuente entregado (cliente dueño 100%)</li>
+  <li>Soporte gratuito durante los primeros 30 días</li>
+</ul>
+
+<h2>5. Por qué Vortta</h2>
+<p>
+Somos un equipo cuencano especializado en desarrollo web a medida. Trabajamos sin plantillas genéricas: cada proyecto se diseña y programa desde cero según las necesidades reales del negocio. Hablamos el lenguaje local, entendemos el mercado, y mantenemos comunicación directa por WhatsApp durante todo el proyecto.
+</p>
+
+<div class="card">
+  <strong>Compromiso de Vortta:</strong> entrega en tiempo, código limpio, capacitación incluida y soporte cercano. No desaparecemos después del deploy.
+</div>
+
+<h2>6. Inversión</h2>
+<p>
+El desglose detallado de costos se encuentra en el documento <strong>"Proforma"</strong> adjunto a esta propuesta. Incluye desarrollo, hosting, dominio, mockups, y opciones de mantenimiento mensual.
+</p>
+
+<h2>7. Próximos pasos</h2>
+<ol style="margin-left: 22px;">
+  <li>Revisión y aprobación de esta propuesta + proforma</li>
+  <li>Firma del acuerdo y pago del 50% para iniciar</li>
+  <li>Kick-off virtual de 30 min para validar identidad</li>
+  <li>Desarrollo (3 semanas)</li>
+  <li>Entrega + pago final del 50%</li>
+</ol>
+
+<div class="signoff">
+  <div class="left">
+    Esta propuesta es válida por 30 días desde la fecha de emisión.<br/>
+    Los precios están en USD e incluyen IVA.
+  </div>
+  <div class="right">
+    <strong>VORTTA</strong><br/>
+    Desarrollo Web — Cuenca, Ecuador<br/>
+    contacto@vortta.com
+  </div>
+</div>
+
+</body>
+</html>

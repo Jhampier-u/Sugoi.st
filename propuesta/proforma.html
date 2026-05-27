@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Proforma — Vortta · Proyecto SUGOI Store</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: "Segoe UI", system-ui, sans-serif; color: #1a1a1a; background: #fff; font-size: 12.5px; line-height: 1.5; }
+  body { max-width: 820px; margin: 0 auto; padding: 24px 32px; }
+
+  .header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 18px; border-bottom: 3px solid #1456ff; margin-bottom: 24px; }
+  .brand-block .brand { font-size: 26px; font-weight: 900; color: #1456ff; letter-spacing: -0.5px; }
+  .brand-block .brand span { color: #ffe600; -webkit-text-stroke: 1px #0a0a0a; }
+  .brand-block .sub { font-size: 11px; color: #666; margin-top: 4px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .doc-block { text-align: right; }
+  .doc-block .doc-type { font-size: 22px; font-weight: 800; color: #0a2db5; letter-spacing: 1px; }
+  .doc-block .doc-num { font-size: 12px; color: #777; margin-top: 4px; }
+
+  .parties { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 22px; }
+  .party { background: #f7f8fa; padding: 12px 14px; border-radius: 8px; border-left: 4px solid #1456ff; }
+  .party.client { border-left-color: #ffe600; }
+  .party__label { font-size: 10px; font-weight: 700; color: #666; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; }
+  .party__name { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+  .party__detail { font-size: 11px; color: #555; margin-top: 2px; }
+
+  h2 { font-size: 13px; color: #0a2db5; margin: 18px 0 8px; border-bottom: 1px solid #e2e4e8; padding-bottom: 4px; letter-spacing: 0.04em; }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 12px; }
+  thead th { background: #1456ff; color: #fff; padding: 8px 10px; text-align: left; font-size: 11px; letter-spacing: 0.05em; }
+  thead th:last-child, tbody td:last-child { text-align: right; }
+  tbody td { padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
+  tbody tr:nth-child(even) td { background: #fafbfc; }
+  .item-name { font-weight: 700; }
+  .item-desc { font-size: 11px; color: #666; margin-top: 2px; }
+  .qty, .unit, .total { white-space: nowrap; text-align: right; }
+  .optional td { color: #888; font-style: italic; }
+  .optional .item-name::after { content: " (opcional)"; font-style: normal; color: #d4af00; font-weight: 600; font-size: 10px; }
+
+  .summary { margin-top: 18px; display: flex; justify-content: flex-end; }
+  .summary table { width: 320px; }
+  .summary td { padding: 6px 10px; font-size: 12px; }
+  .summary tr.subtotal td { border-top: 1px solid #ddd; }
+  .summary tr.total td { background: #1456ff; color: #fff; font-weight: 800; font-size: 14px; padding: 10px 12px; }
+  .summary tr.total td:last-child { font-size: 18px; }
+
+  .terms { margin-top: 24px; background: #fffbe6; border: 1px solid #f0d600; padding: 14px 18px; border-radius: 8px; }
+  .terms h3 { font-size: 12px; color: #8a7400; margin-bottom: 6px; letter-spacing: 0.05em; }
+  .terms ul { margin-left: 18px; font-size: 11px; line-height: 1.7; }
+
+  .footer-sign { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; padding-top: 18px; }
+  .sign-line { border-top: 1.5px solid #333; padding-top: 6px; font-size: 11px; color: #555; text-align: center; }
+  .sign-line strong { color: #1a1a1a; font-size: 12px; }
+
+  .print-btn { position: fixed; top: 14px; right: 14px; background: #1456ff; color: #fff; border: 0; padding: 10px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  @media print { .print-btn { display: none; } body { padding: 0; } }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⬇ Imprimir / Guardar PDF</button>
+
+<div class="header">
+  <div class="brand-block">
+    <div class="brand">VORTTA<span>.</span></div>
+    <div class="sub">Desarrollo Web · Cuenca, Ecuador</div>
+  </div>
+  <div class="doc-block">
+    <div class="doc-type">PROFORMA</div>
+    <div class="doc-num">N° VRT-2026-001</div>
+    <div class="doc-num">Fecha: Mayo 2026</div>
+    <div class="doc-num">Vigencia: 30 días</div>
+  </div>
+</div>
+
+<div class="parties">
+  <div class="party">
+    <div class="party__label">Proveedor</div>
+    <div class="party__name">VORTTA</div>
+    <div class="party__detail">Cuenca, Ecuador</div>
+    <div class="party__detail">contacto@vortta.com</div>
+    <div class="party__detail">+593 99 XXX XXXX</div>
+  </div>
+  <div class="party client">
+    <div class="party__label">Cliente</div>
+    <div class="party__name">SUGOI Store</div>
+    <div class="party__detail">Cuenca, Ecuador</div>
+    <div class="party__detail">@sugoist.of</div>
+    <div class="party__detail">+593 99 918 1782</div>
+  </div>
+</div>
+
+<h2>A. Desarrollo y Diseño</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:50%">Ítem</th>
+      <th class="qty">Cant.</th>
+      <th class="unit">Unitario</th>
+      <th class="total">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="item-name">Diseño UI/UX y Branding</div>
+        <div class="item-desc">Identidad visual completa, paleta cómic-streetwear, tipografías, sistema de componentes.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 75,00</td>
+      <td class="total">$ 75,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Desarrollo Frontend (Landing)</div>
+        <div class="item-desc">HTML/CSS/JS responsive: hero, categorías, catálogo filtrable, acerca, contacto, navbar dinámica, animaciones.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 110,00</td>
+      <td class="total">$ 110,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Editor de Diseño Interactivo</div>
+        <div class="item-desc">Sistema drag & drop con canvas, ajuste de tamaño/rotación/opacidad, 18 colores, vista frente/espalda, soporte para PNG/JPG/SVG.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 165,00</td>
+      <td class="total">$ 165,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Procesamiento de Mockups</div>
+        <div class="item-desc">Extracción y optimización de mockups PSD → PNG, calibración de áreas de impresión, capa de cámara para estuches.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 45,00</td>
+      <td class="total">$ 45,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Cotizador Automático + Integración WhatsApp</div>
+        <div class="item-desc">Cálculo en tiempo real (producto, talla, complejidad de impresión, doble cara), generación de mensaje pre-llenado a wa.me.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 50,00</td>
+      <td class="total">$ 50,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Testing, Optimización y Despliegue</div>
+        <div class="item-desc">Pruebas en Chrome/Firefox/Safari/móvil, optimización de imágenes, configuración SSL, deploy a producción.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 35,00</td>
+      <td class="total">$ 35,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Capacitación + Documentación</div>
+        <div class="item-desc">Sesión virtual de 1 hora con el equipo + manual PDF de uso del editor y administración de catálogo.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 20,00</td>
+      <td class="total">$ 20,00</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>B. Servicios Recurrentes (Anuales)</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:50%">Ítem</th>
+      <th class="qty">Cant.</th>
+      <th class="unit">Unitario</th>
+      <th class="total">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="item-name">Dominio .com (1 año)</div>
+        <div class="item-desc">Registro de sugoist.com o similar a través de Namecheap / Hostinger.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 12,00</td>
+      <td class="total">$ 12,00</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="item-name">Hosting Web (1 año)</div>
+        <div class="item-desc">Plan compartido básico con SSL incluido y soporte. Recomendamos Hostinger plan inicial.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 38,00</td>
+      <td class="total">$ 38,00</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>C. Servicios Opcionales</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:50%">Ítem</th>
+      <th class="qty">Cant.</th>
+      <th class="unit">Unitario</th>
+      <th class="total">Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="optional">
+      <td>
+        <div class="item-name">Pack adicional de mockups premium</div>
+        <div class="item-desc">3 mockups extra PSD profesionales (vista lateral, modelos posando, etc.) — vía Placeit / Yellow Images.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 22,00</td>
+      <td class="total">$ 22,00</td>
+    </tr>
+    <tr class="optional">
+      <td>
+        <div class="item-name">Mantenimiento mensual</div>
+        <div class="item-desc">Actualizaciones de catálogo, ajustes de diseño, soporte directo, copias de seguridad. Pago mensual recurrente.</div>
+      </td>
+      <td class="qty">1 mes</td>
+      <td class="unit">$ 20,00</td>
+      <td class="total">$ 20,00</td>
+    </tr>
+    <tr class="optional">
+      <td>
+        <div class="item-name">Integración con pasarela de pago</div>
+        <div class="item-desc">Conexión con PayPhone, Datafast o Stripe para cobros automáticos online (excluye comisión de la pasarela).</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 90,00</td>
+      <td class="total">$ 90,00</td>
+    </tr>
+    <tr class="optional">
+      <td>
+        <div class="item-name">Panel administrativo (CMS)</div>
+        <div class="item-desc">Backoffice para que Sugoi gestione productos, precios y stock sin intervención técnica.</div>
+      </td>
+      <td class="qty">1</td>
+      <td class="unit">$ 130,00</td>
+      <td class="total">$ 130,00</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="summary">
+  <table>
+    <tr>
+      <td>Subtotal Desarrollo (A)</td>
+      <td class="total">$ 500,00</td>
+    </tr>
+    <tr>
+      <td>Subtotal Servicios Anuales (B)</td>
+      <td class="total">$ 50,00</td>
+    </tr>
+    <tr class="subtotal">
+      <td><strong>Subtotal</strong></td>
+      <td class="total"><strong>$ 550,00</strong></td>
+    </tr>
+    <tr class="total">
+      <td>TOTAL A PAGAR (IVA incluido)</td>
+      <td class="total">$ 550,00</td>
+    </tr>
+  </table>
+</div>
+
+<div class="terms">
+  <h3>📋 Términos y Condiciones</h3>
+  <ul>
+    <li><strong>Forma de pago:</strong> 50% al firmar el acuerdo, 50% contra entrega del proyecto en producción.</li>
+    <li><strong>Tiempo de entrega:</strong> 3 semanas desde la confirmación del pedido y recepción del primer pago.</li>
+    <li><strong>Garantía:</strong> 30 días de soporte gratuito post-lanzamiento (correcciones de errores, no nuevas funcionalidades).</li>
+    <li><strong>Propiedad:</strong> el código fuente y los derechos del sitio pertenecen al cliente una vez completado el pago total.</li>
+    <li><strong>Hosting/Dominio:</strong> el primer año está incluido en esta proforma. Renovaciones anuales se facturan por separado.</li>
+    <li><strong>Servicios opcionales:</strong> NO incluidos en el total. Se contratan por separado según interés del cliente.</li>
+    <li><strong>Precios en USD</strong> e incluyen IVA cuando se indica. Proforma válida por 30 días.</li>
+  </ul>
+</div>
+
+<div class="footer-sign">
+  <div class="sign-line">
+    <strong>VORTTA</strong><br/>
+    Proveedor del servicio
+  </div>
+  <div class="sign-line">
+    <strong>SUGOI Store</strong><br/>
+    Cliente · Aceptado por
+  </div>
+</div>
+
+</body>
+</html>
